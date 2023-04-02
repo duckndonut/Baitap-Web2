@@ -1,0 +1,41 @@
+
+<p>Bài 32:</p>
+{{errMessage}}
+
+<h3 class="text-center text-white bg-dark p-3">CoinDesk API</h3>
+<div class="container">
+  <h3>{{data.chartname}}</h3>
+  <p>{{data.disclaimer}}</p>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th>Code</th>
+        <th>Symbol</th>
+        <th>Rate</th>
+        <th>Description</th>
+        <th>Rate Float</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>{{data.bpi.USD.code}}</td>
+        <td>{{data.bpi.USD.symbol}}</td>
+        <td>{{data.bpi.USD.rate}}</td>
+        <td>{{data.bpi.USD.description}}</td>
+        <td>{{data.bpi.USD.rate_float}}</td>
+      </tr>
+      <tr>
+        <td>{{data.bpi.GBP.code}}</td>
+        <td>{{data.bpi.GBP.symbol}}</td>
+        <td>{{data.bpi.GBP.rate}}</td>
+        <td>{{data.bpi.GBP.description}}</td>
+        <td>{{data.bpi.GBP.rate_float}}</td>
+      </tr>
+      <tr>
+        <td>{{data.bpi.EUR.code}}</td>
+        <td>{{data.bpi.EUR.symbol}}</td>
+        <td>{{data.bpi.EUR.rate}}</td>
+        <td>{{data.bpi.EUR.description}}</td>
+        <td>{{data.bpi.EUR.rate_float}}</td>
+    </tbody>
+  </table>

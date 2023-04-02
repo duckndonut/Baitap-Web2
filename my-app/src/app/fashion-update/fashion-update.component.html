@@ -1,0 +1,57 @@
+
+  
+<div class="container">
+  <table>
+    <tr>
+      <td>Fashion Id:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion._id">
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Style:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion.style">
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Subject:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion.fashion_subject">
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Detail:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion.fashion_detail">
+      </td>
+    </tr>
+  </table>
+  <button (click)="putFashion(fashion._id)">Update</button>
+</div>
+<div class="container">
+  <p>{{errMessage}}</p>
+</div>
+
+
+
+<div class="container">
+  <table class="table table-hover" border="1">
+    <tr style="background-color: mediumspringgreen;">
+      <td>Id</td>
+      <td>Fashion Subject</td>
+      <td>Fashion Detail</td>
+      <td>Image</td>
+    </tr>
+    <tbody>
+      <tr *ngFor="let fashion of fashions">
+        <td>{{fashion._id}}</td>
+        <td>{{fashion.fashion_subject}}</td>
+        <td>{{fashion.fashion_detail}} </td>
+        <td>
+          <img src="{{fashion.fashion_image}}" width="100px" height="100px">
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
