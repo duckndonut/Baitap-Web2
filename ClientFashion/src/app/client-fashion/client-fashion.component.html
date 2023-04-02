@@ -1,0 +1,33 @@
+<p></p>
+<div style="display: flex;">
+    <div style="flex: 1;">
+        <div style="position: relative;">
+            <input type="text" placeholder="TRY *STREET STYLE*"
+                style="width: 100%; box-sizing: border-box; padding: 6px 12px; border-radius: 4px; border: 1px solid #ccc;"
+                [(ngModel)]="style">
+        </div>
+    </div>
+    <select style="width: 30%; box-sizing: border-box; padding: 6px 12px; border-radius: 4px; border: 1px solid #ccc;"
+        [(ngModel)]="style" (ngModelChange)="routeToStyle(style)">
+        <option selected>Select a style</option>
+        <option *ngFor="let s of styles">{{s}}</option>
+    </select>
+    <button class="btn" (click)="routeToStyle(style)">Search</button>
+</div>
+
+<div style="display: flex; flex-direction: column;">
+    <div *ngFor="let style of styles">
+        <h4 style="text-align: center; padding: 10px; margin-top: 20px;">{{style}}
+        </h4>
+        <div style="display: flex; flex-wrap: wrap;">
+            <div *ngFor="let fashion of filterStyle(style)" style="flex-basis: calc(33.33% - 20px); margin: 10px;">
+                <div style="border: 1px solid #ccc; padding: 10px; display: flex; flex-direction: column; align-items: center;"
+                    (click)="routeToDetail(fashion._id)">
+                    <img src="{{fashion.fashion_image}}" class="img-thumbnail" style="width: 350px; height: 350px;">
+                    <h5 style="text-align: center; margin-top: 10px">
+                        {{fashion.fashion_subject}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

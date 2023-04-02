@@ -1,0 +1,12 @@
+<h3 style="text-align: center;">Fashion Detail</h3>
+
+<div style="background-color: #f1f1f1; padding: 15px;">
+    <h4 style="text-align: center;  color: #111; padding: 15px;">{{fashion.fashion_subject}}</h4>
+    <button class="btn" (click)="routeToHome()">Home</button>
+    <div style="display: flex; justify-content: center;">
+      <p style="max-width: 600px; margin: 0;">{{fashion.fashion_detail}}</p>
+    </div>
+    <div style="display: flex; justify-content: center;">
+      <img src="{{fashion.fashion_image}}" alt="fashion image" width = "575px" height="575px" >
+    </div>
+  </div>
