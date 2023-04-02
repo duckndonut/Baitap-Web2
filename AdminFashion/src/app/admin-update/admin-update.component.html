@@ -1,0 +1,59 @@
+<h2>{{uiSuite.componentTitle}}</h2>
+<div>
+  <table>
+    <tr>
+      <td>Fashion Style:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion.style">
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Subject:</td>
+      <td>
+        <input type="text" [(ngModel)]="fashion.fashion_subject">
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Detail:</td>
+      <td >
+        <ckeditor  [editor]="Editor" [(ngModel)]="fashion.fashion_detail"  data="{{fashion.fashion_detail}}"
+        (ngModelChange)="onContentChange($event)">
+        </ckeditor>
+      </td>
+    </tr>
+    <tr>
+      <td>Fashion Image:</td>
+      <td>
+        <input type="file" #name="ngModel" name="fashion_image" id="fashion_image" [(ngModel)]="fashion.fashion_image" (change)="onFileSelected($event,fashion)">
+      </td>
+    </tr>
+  </table>
+  <button (click)="executeButton()">{{uiSuite.buttonTitle}}</button>
+  <div>
+    <p *ngIf="errMessage" class="text-danger">{{errMessage}}</p>
+  </div>
+</div>
+
+
+
+  
+  <div class="container">
+    <table class="table table-hover" border="1">
+      <tr style="background-color: mediumspringgreen;">
+        <td>Id</td>
+        <td>Fashion Subject</td>
+        <td>Fashion Detail</td>
+        <td>Image</td>
+      </tr>
+      <tbody>
+        <tr *ngFor="let fashion of fashions">
+          <td>{{fashion._id}}</td>
+          <td>{{fashion.fashion_subject}}</td>
+          <td>{{fashion.fashion_detail}} </td>
+          <td>
+            <img src="{{fashion.fashion_image}}" width="100px" height="100px">
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>

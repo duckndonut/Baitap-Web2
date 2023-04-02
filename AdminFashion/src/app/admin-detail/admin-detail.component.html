@@ -1,0 +1,30 @@
+<p>admin-detail works!</p>
+
+<div>
+  <table class="table" border="1">
+    <tr>
+      <td>Fashion Id:</td>
+      <td>{{fashion._id}}</td>
+    </tr>
+    <tr>
+      <td>Fashion Subject:</td>
+      <td>{{fashion.fashion_subject}}</td>
+    </tr>
+    <tr>
+      <td>Fashion Detail:</td>
+      <td>{{fashion.fashion_detail}}</td>
+    </tr>
+    <tr>
+        <td>Create Date:</td>
+        <td>{{fashion.create_date}}</td>
+      </tr>
+    <tr>
+      <td colspan="2">
+        <img style="object-fit: cover;" src="{{fashion.fashion_image}}" width="400px" alt="Fashion image">
+      </td>
+    </tr>
+  </table>
+</div>
+<ng-template #showErr>
+  <p>{{errMessage}}</p>
+</ng-template>
